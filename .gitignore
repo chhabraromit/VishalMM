@@ -10,3 +10,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#gensrc directories
+vmm/vmmcockpits/gensrc/
+vmm/vmmcore/gensrc/
+vmm/vmmfacades/gensrc/
+vmm/vmmfulfilmentprocess/gensrc/
+vmm/vmminitialdata/gensrc/
+vmm/vmmstorefront/gensrc/
+vmm/vmmtest/gensrc/
+
+#.gitignore files
+.gitignore*
