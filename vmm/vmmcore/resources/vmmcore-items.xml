@@ -41,6 +41,10 @@
 	<itemtypes>
 
 		<!-- Add your item definitions here -->
+		<itemtype code="LastBrowsedProductCarouselComponent" autocreate="true"
+			generate="true" extends="ProductCarouselComponent" 
+			jaloclass="com.vmm.core.jalo.LastBrowsedProductCarouselComponent">	
+		</itemtype>
 
 
 		<!-- TypeGroups are for structure of this file only -->

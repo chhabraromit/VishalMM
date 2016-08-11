@@ -18,7 +18,9 @@ $storefrontContextRoot=$config-storefrontContextRoot
 
 UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
 ;;ApparelUKHomepageProductCarouselComponent;Best Selling Products;
-;;NewApparelUKHomepageProductCarouselComponent;What's New;
+
+UPDATE LastBrowsedProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;lastBrsdProdCarouselComp;Last Browsed Products;
 
 ###  Home page splash   #######
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];realfilename;altText;mime[default='image/jpeg'];$contentCV[unique=true];folder(qualifier)[default=images];
