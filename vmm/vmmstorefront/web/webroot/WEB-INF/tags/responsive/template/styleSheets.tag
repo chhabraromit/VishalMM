@@ -14,6 +14,15 @@
 	<c:otherwise>
 		<%-- Theme CSS files --%>
 		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/stylenew.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/datepicker.css"/>
+				<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/owl.carousel.css"/>
+				<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/owl.theme.css"/>
+				<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/owl.transitions.css"/>
+				<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/bootstrap.min.css"/>
+						<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/bootstrap-themes.css"/>
+						<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/font-awesome.min.css"/>
+		
 		<%--  AddOn Common CSS files --%>
 		<c:forEach items="${addOnCommonCssPaths}" var="addOnCommonCss">
 			<link rel="stylesheet" type="text/css" media="all" href="${addOnCommonCss}"/>

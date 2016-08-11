@@ -14,16 +14,16 @@
 	</div>
 </div>
 <div class="row">
-	<div class="container-lg col-md-6">
-		<div class="account-section-content">
-			<div class="account-section-form">
+	<div class="col-md-6 col-sm-6 col-xs-12 margn_bot_50">
+		<div class="personal_form bx_shd_n pad_none">
+			<div >
 				<form:form action="${action}" method="post" commandName="updatePasswordForm">
 
 					<formElement:formPasswordBox idKey="currentPassword"
 												 labelKey="profile.currentPassword" path="currentPassword" inputCSS="form-control"
 												 mandatory="true" />
 					<formElement:formPasswordBox idKey="newPassword"
-												 labelKey="profile.newPassword" path="newPassword" inputCSS="form-control"
+												 labelKey='profile.newPassword' path="newPassword" inputCSS="form-control"
 												 mandatory="true" />
 					<formElement:formPasswordBox idKey="checkNewPassword"
 												 labelKey="profile.checkNewPassword" path="checkNewPassword" inputCSS="form-control"
