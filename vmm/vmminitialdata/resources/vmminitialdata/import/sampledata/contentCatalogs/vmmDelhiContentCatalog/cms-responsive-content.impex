@@ -68,11 +68,11 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
 ;;ApparelUKHomepageProductCarouselComponent;Best Selling Products;29533,45572,M33477_B,300310300,300045375,300022356,300047513;allVisible;false;ApparelUKHomepageProductCarouselComponent
 
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-;;NewApparelUKHomepageProductCarouselComponent;What's New ApparelUK Homepage Product Carousel;29531,300046592,300015407,300040462,M27160_B,M33477_B,300310300,300044599,300005449,300441142;allVisible;false;NewApparelUKHomepageProductCarouselComponent
+INSERT_UPDATE LastBrowsedProductCarouselComponent	;$contentCV[unique=true]		;uid[unique=true]			;name												;scroll(code)	;popup		;&componentRef
+													;								;lastBrsdProdCarouselComp	;Last Browsed VMM Delhi Homepage Product Carousel	;allVisible		;false		;lastBrsdProdCarouselComp
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-;;Section3Slot-Homepage;ApparelUKHomepageProductCarouselComponent,NewApparelUKHomepageProductCarouselComponent
+;;Section3Slot-Homepage;ApparelUKHomepageProductCarouselComponent,lastBrsdProdCarouselComp
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true];;;
 ;;Section3Slot-Homepage;Section3;;Section3Slot-Homepage;;;

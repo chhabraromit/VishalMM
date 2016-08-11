@@ -40,7 +40,6 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
-import com.vmm.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -48,10 +47,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -62,6 +64,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,6 +74,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.common.collect.Maps;
+import com.vmm.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -121,9 +125,31 @@ public class ProductPageController extends AbstractPageController
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
-			final HttpServletRequest request, final HttpServletResponse response)
-					throws CMSItemNotFoundException, UnsupportedEncodingException
+			final HttpServletRequest request, final HttpServletResponse response,
+			@CookieValue(value = "lastBrowsedProducts", defaultValue = "") String lastBrowsedProducts)
+			throws CMSItemNotFoundException, UnsupportedEncodingException
 	{
+
+		// Count of products to be maintained in Cookie
+		final int countOfProducts = 20;
+
+		System.out.println("praveen cookie value======" + lastBrowsedProducts);
+
+		if (lastBrowsedProducts.equalsIgnoreCase(""))
+		{
+			lastBrowsedProducts = productCode;
+		}
+		else
+		{
+			lastBrowsedProducts = listLatestBrowsedProducts(lastBrowsedProducts, productCode, countOfProducts);
+		}
+		final Cookie foo = new Cookie("lastBrowsedProducts", lastBrowsedProducts);
+		foo.setMaxAge(9999999);
+		foo.setPath("/");
+		response.addCookie(foo);
+
+		System.out.println("praveen cookie added value------------------" + lastBrowsedProducts);
+
 		final List<ProductOption> extraOptions = Arrays.asList(ProductOption.VARIANT_MATRIX_BASE, ProductOption.VARIANT_MATRIX_URL,
 				ProductOption.VARIANT_MATRIX_MEDIA);
 
@@ -148,6 +174,42 @@ public class ProductPageController extends AbstractPageController
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());
 		setUpMetaData(model, metaKeywords, metaDescription);
 		return getViewForPage(model);
+	}
+
+	/**
+	 * @param lastBrowsedProducts
+	 * @param productCode
+	 * @param count
+	 * @return list
+	 */
+	private String listLatestBrowsedProducts(final String lastBrowsedProducts, final String productCode, final int count)
+	{
+
+		final String[] result = lastBrowsedProducts.split(",");
+
+		final Set<String> uniqueList = new LinkedHashSet<String>(Arrays.asList(result));
+
+		if (result.length >= count)
+		{
+			uniqueList.remove(result[0]);
+			uniqueList.add(productCode);
+		}
+		else if (result.length < count)
+		{
+			uniqueList.remove(productCode);
+			uniqueList.add(productCode);
+		}
+
+		final StringBuilder list = new StringBuilder();
+		for (final String str : uniqueList)
+		{
+			list.append(str);
+			list.append(',');
+		}
+		list.deleteCharAt(list.length() - 1);
+
+		return list.toString();
+
 	}
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/orderForm", method = RequestMethod.GET)
@@ -218,7 +280,7 @@ public class ProductPageController extends AbstractPageController
 	{ RequestMethod.GET, RequestMethod.POST })
 	public String postReview(@PathVariable final String productCode, final ReviewForm form, final BindingResult result,
 			final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
-					throws CMSItemNotFoundException
+			throws CMSItemNotFoundException
 	{
 		getReviewValidator().validate(form, result);
 
@@ -295,7 +357,7 @@ public class ProductPageController extends AbstractPageController
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/writeReview", method = RequestMethod.POST)
 	public String writeReview(@PathVariable final String productCode, final ReviewForm form, final BindingResult result,
 			final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
-					throws CMSItemNotFoundException
+			throws CMSItemNotFoundException
 	{
 		getReviewValidator().validate(form, result);
 
