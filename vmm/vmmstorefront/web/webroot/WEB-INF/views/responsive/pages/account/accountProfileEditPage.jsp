@@ -8,17 +8,23 @@
 	tagdir="/WEB-INF/tags/responsive/formElement"%>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 
-<div class="account-section-header">
+<%-- <div class="account-section-header">
 	<div class="row">
 		<div class="container-lg col-md-6">
 			<spring:theme code="text.account.profile.updatePersonalDetails" />
 		</div>
 	</div>
-</div>
+</div> --%>
 <section class="white_bg_m">
   <div class="container">
  
+ 
 <div class="row">
+
+<div class="col-md-12">
+        <h2 class="margn_bot_25 margn_tp_n"><spring:theme code="text.account.profile.updatePersonalDetails" /></h2>
+      </div>
+
 <div class="col-md-6 col-sm-6 col-xs-12 margn_bot_25">
         <div class="personal_form bx_shd_n pad_none">
         <!--  <p>All Fields marked with * are mandatory</p>
@@ -26,27 +32,25 @@
 		<div class="account-section-content"> -->
 			<div class="account-section-form">
 				<form:form action="update-profile" method="post" commandName="updateProfileForm">
-			<div class="form-group">
+			
 					<formElement:formSelectBox idKey="profile.title"
 						labelKey="profile.title" path="titleCode" mandatory="true"
 						skipBlank="false" skipBlankMessageKey="form.select.empty"
-						items="${titleData}" selectCSSClass="form-control" /></div>
-			<div class="form-group">
-				<label >	<formElement:formInputBox idKey="profile.firstName"
+						items="${titleData}" selectCSSClass="form-control" />
+			
+					<formElement:formInputBox idKey="profile.firstName"
 						labelKey="profile.firstName" path="firstName" inputCSS="text"
-						mandatory="true" /></label></div>
-				<div class="form-group">
-				
-				<label >	<formElement:formInputBox idKey="profile.lastName"
+						mandatory="true" />
+					<formElement:formInputBox idKey="profile.lastName"
 						labelKey="profile.lastName" path="lastName" inputCSS="text"
-						mandatory="true" /></label></div>
+						mandatory="true" />
 
 					<div class="row">
 						<div class="col-sm-6 col-sm-push-6">
 							<div class="accountActions">
 								<ycommerce:testId
 									code="personalDetails_savePersonalDetails_button">
-									<button type="submit" class="btn btn-primary btn-block">
+									<button type="submit" class="btn btn-default upadte_btn">
 										<spring:theme code="text.account.profile.saveUpdates"
 											text="Save Updates" />
 									</button>
@@ -57,8 +61,7 @@
 							<div class="accountActions">
 								<ycommerce:testId
 									code="personalDetails_cancelPersonalDetails_button">
-									<button type="button"
-										class="btn btn-default btn-block backToHome">
+									<button type="button" class="btn btn-default upadte_btn">
 										<spring:theme code="text.account.profile.cancel" text="Cancel" />
 									</button>
 								</ycommerce:testId>

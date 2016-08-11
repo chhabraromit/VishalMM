@@ -574,7 +574,7 @@ form div {
 	border-color: #fff;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: #0087f2;
 	color: #fff;
 	font-size: 16px;
@@ -587,7 +587,7 @@ form div {
 	border-color: #f54337;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: transparent;
 	color: #f54337;
 	font-size: 16px;
@@ -601,7 +601,7 @@ form div {
 	border-color: #f54337;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: transparent;
 	color: #f54337;
 	font-size: 16px;
@@ -615,7 +615,7 @@ form div {
 	border-color: #aaa;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: #aaa;
 	color: #fff;
 	font-size: 16px;
@@ -629,7 +629,7 @@ form div {
 	border-color: #0087f2;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: transparent;
 	color: #0087f2;
 	font-size: 16px;
@@ -659,7 +659,7 @@ form div {
 	border-color: #fff;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: #3b5998;
 	color: #fff;
 	font-size: 16px;
@@ -668,7 +668,7 @@ form div {
 	border-color: #fff;
 	width: 100%;
 	height: 50px;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	background-color: #d34836;
 	color: #fff;
 	font-size: 16px;
@@ -1128,3 +1128,11 @@ footer {
 	font-size: 34px !important;
 	opacity: 1 !important;
 }
+
+.set_default_btn{
+	border: medium none;
+background: transparent none repeat scroll 0% 0%;
+text-decoration: underline;
+color: rgb(31, 150, 244);
+}
+.account-section .account-section-content form{padding: 0px !important;}

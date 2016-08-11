@@ -10,7 +10,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <c:url value="/${product.url}" var="productUrl"/>
-
 <template:page pageTitle="${pageTitle}">
 
     <jsp:body>
