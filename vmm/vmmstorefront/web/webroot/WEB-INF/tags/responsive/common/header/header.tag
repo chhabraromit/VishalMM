@@ -17,14 +17,22 @@
 <header class="js-mainHeader">
 	<nav class="navigation navigation--top hidden-xs hidden-sm">
 		<div class="row">
-			<div class="col-sm-12 col-md-4">
+			<div class="col-sm-12 col-md-3">
 				<div class="nav__left js-site-logo">
 					<cms:pageSlot position="SiteLogo" var="logo" limit="1">
 						<cms:component component="${logo}" element="div" class="yComponentWrapper"/>
 					</cms:pageSlot>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-8">
+			
+			<div class="col-sm-12 col-md-9">
+			 <div class="site-search">
+								<cms:pageSlot position="SearchBox" var="component">
+									<cms:component component="${component}" element="div"/>
+								</cms:pageSlot>
+							</div>
+			</div>
+			<div class="col-sm-12 col-md-9">
 				<div class="nav__right">
 					<ul class="nav__links nav__links--account">
 						<c:if test="${empty hideHeaderLinks}">
@@ -139,13 +147,13 @@
 								<span class="glyphicon glyphicon-align-justify"></span>
 							</button>
 						</div>
-						<div class="col-sm-10">
+						<%-- <div class="col-sm-10">
 							<div class="site-search">
 								<cms:pageSlot position="SearchBox" var="component">
 									<cms:component component="${component}" element="div"/>
 								</cms:pageSlot>
 							</div>
-						</div>
+						</div> --%>
 					</div>
 				</div>
 				<div class="nav__right col-xs-6 col-xs-6 hidden-xs">

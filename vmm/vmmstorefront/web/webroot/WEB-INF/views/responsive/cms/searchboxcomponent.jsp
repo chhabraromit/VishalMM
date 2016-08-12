@@ -7,7 +7,7 @@
 <c:url value="/search/" var="searchUrl" />
 <c:url value="/search/autocomplete/${component.uid}"
 	var="autocompleteUrl" />
-
+<%-- 
 <div class="ui-front">
 	<form name="search_form_${component.uid}" method="get"
 		action="${searchUrl}">
@@ -31,4 +31,17 @@
 		</div>
 	</form>
 
-</div>
+</div> --%>
+
+<div class="" style="border-radius:15px; background-color:#fff;">
+	<form name="search_form_${component.uid}" method="get"
+		action="${searchUrl}">
+          <div class="input-group">
+          	<spring:theme code="search.placeholder" var="searchPlaceholder" />
+          	
+            <input class="form-control" placeholder="${searchPlaceholder}" style="background-color:transparent; border:none;" type="text" data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "${component.minCharactersBeforeRequest}","waitTimeBeforeRequest" : "${component.waitTimeBeforeRequest}","displayProductImages" : ${component.displayProductImages}}'>
+            <span class="input-group-btn">
+            <button class="btn btn-default" style="background-color:transparent; border:none;" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span> </div>
+            </form>
+        </div>
