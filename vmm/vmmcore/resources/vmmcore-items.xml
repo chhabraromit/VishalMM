@@ -18,6 +18,7 @@
 		<collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
 		<collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
 		                type="set"/>
+	 <collectiontype code="ChildrenCollection" elementtype="Children" autocreate="true" generate="false"/>               
 	</collectiontypes>
 
 
@@ -46,6 +47,64 @@
 			jaloclass="com.vmm.core.jalo.LastBrowsedProductCarouselComponent">	
 		</itemtype>
 
+			  <typegroup name="Customer">
+			<itemtype code="Customer" autocreate="false" generate="false">
+				<description>Extending Customer type with Children</description>
+				<attributes>
+					<attribute autocreate="true" qualifier="manyChildren" type="ChildrenCollection">
+						<modifiers read="true" write="true" search="true" optional="true" partof="true"/>
+						<persistence type="property" />
+						<description>It holds information about customer's Children</description>
+					</attribute>
+				</attributes>
+			</itemtype>        
+        </typegroup> 
+        <typegroup name="Children">
+<itemtype code="Children"
+                  extends="GenericItem"
+                  jaloclass="com.vmm.core.jalo.user.Children"
+                  autocreate="true"
+                  generate="true">
+                  <description>Making Children type with additional attributes.</description>
+            <deployment table="Children" typecode="10111"/>
+				<attributes>
+				 <attribute autocreate="true" qualifier="id" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+					  <attribute autocreate="true" qualifier="firstname" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                    <custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+                    </custom-properties>
+                </attribute>
+                <attribute autocreate="true" qualifier="lastname" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                    <custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+                    </custom-properties>
+                </attribute>
+					  <attribute qualifier="gender" type="java.lang.String" autocreate="true">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="dateOfBirth" autocreate="true" type="java.util.Date">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                    <model>
+                        <getter name="dateofbirth" deprecated="true"/>
+                        <setter name="dateofbirth" deprecated="true"/>
+                    </model>
+                </attribute>
+					</attributes>
+					</itemtype>
+			</typegroup>
 
 		<!-- TypeGroups are for structure of this file only -->
 

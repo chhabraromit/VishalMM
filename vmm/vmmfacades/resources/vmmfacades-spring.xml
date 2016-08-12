@@ -187,4 +187,6 @@
 	</bean>
 
 	<bean id="genderData" class="com.vmm.facades.product.data.GenderData" scope="prototype"/>
+	<bean id="childrenRegistrationFacade" class="com.vmm.facades.customer.impl.ChildrenRegistrationFacade" scope="prototype" >
+	</bean>	
 </beans>

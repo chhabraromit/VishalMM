@@ -20,4 +20,11 @@
 		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 	</bean>
+	<bean class="de.hybris.platform.yacceleratorfacades.children.data.ChildrenData">
+	<property name="id" type="String"/>
+		<property name="firstName" type="String"/>
+		<property name="lastName" type="String"/>
+		<property name="dateOfBirth" type="java.util.Date" />
+		<property name="gender" type="String"/>
+	</bean>
 </beans>
