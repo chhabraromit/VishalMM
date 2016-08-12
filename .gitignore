@@ -20,4 +20,4 @@ vmm/vmmstorefront/gensrc/
 vmm/vmmtest/gensrc/
 
 #.gitignore files
-.gitignore*
+.gitignore~
