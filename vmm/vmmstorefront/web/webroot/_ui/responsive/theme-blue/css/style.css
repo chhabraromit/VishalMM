@@ -7283,9 +7283,7 @@ output {
 .open > .dropdown-menu {
   padding: 15px 0 0 0;
 }
-.dropdown-menu li {
-  margin-top: 3px;
-}
+
 .dropdown-menu li:first-child {
   margin-top: 0px;
 }
