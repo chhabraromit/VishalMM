@@ -11,6 +11,7 @@
 <spring:url value="/my-account/address-book" var="addressBookUrl"/>
 <spring:url value="/my-account/payment-details" var="paymentDetailsUrl"/>
 <spring:url value="/my-account/orders" var="ordersUrl"/>
+<spring:url value="/my-account/add-children" var="addChildrenUrl"/>
 
 <template:page pageTitle="${pageTitle}">
 		<cms:pageSlot position="SideContent" var="feature" class="accountPageSideContent">

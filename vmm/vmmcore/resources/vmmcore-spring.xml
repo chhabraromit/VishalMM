@@ -436,5 +436,9 @@
 		<property name="commerceCategoryService" ref="commerceCategoryService"/>
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>
+	<!-- children registration related entries -->
+	<bean id="childrenRegistrationService"
+		class="com.vmm.core.service.customer.impl.ChildrenRegistrationService">
+	</bean>
 	
 </beans>
