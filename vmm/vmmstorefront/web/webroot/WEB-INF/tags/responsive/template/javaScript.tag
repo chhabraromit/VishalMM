@@ -38,6 +38,14 @@
 		<script type="text/javascript" src="${commonResourcePath}/js/jquery.tmpl-1.0.0pre.min.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/jquery.currencies.min.js"></script>
 		
+		<%-- added for ui changes --%>
+		
+
+ 
+<script type="text/javascript" src="${commonResourcePath}/js/bootstrap-datepicker.js"></script>
+ 
+
+
 		<%-- Custom ACC JS --%>
 	
 		<script type="text/javascript" src="${commonResourcePath}/js/jquery.mmenu.all.min.js"></script>
@@ -86,6 +94,11 @@
 
 		<script type="text/javascript" src="${commonResourcePath}/js/_autoload.js"></script>
 		
+		<script type="text/javascript" src="${commonResourcePath}/js/owl.carousel.js"></script>
+		<script type="text/javascript" src="${commonResourcePath}/js/owl.carousel.min.js"></script>
+		
+		
+		
 		<%-- Cms Action JavaScript files --%>
 		<c:forEach items="${cmsActionsJsFiles}" var="actionJsFile">
 		    <script type="text/javascript" src="${commonResourcePath}/js/cms/${actionJsFile}"></script>
@@ -101,6 +114,7 @@
 
 
 <cms:previewJS cmsPageRequestContextData="${cmsPageRequestContextData}" />
+<<<<<<< Updated upstream
 <script type="text/javascript">
 			$(function() {
 				$('nav#menu').mmenu({
@@ -141,5 +155,36 @@ $('.nav#menu').click(function(){
         $('.mob-toggle').removeClass('mob-cross');
         $('body').removeClass('sca');
    });
+=======
+<script>
+$(document).ready(function(){
+	$('.con_1').slideUp();
+	$('.gh').addClass( 'fa-plus')
+	
+	$("div.bx").click(function(){
+		//var index = $(this).index();
+		
+		if($(this).children('div').css('display') == 'block'){
+			$(this).children('div').slideUp();
+		 	
+			
+		}
+		
+		if($(this).children('div').css('display') == 'none'){
+				$('div.con_1').slideUp();
+				
+			$(this).children('div').slideDown();
+			
+		
+		 
+		}
+		
+		//$(this).children('div.con_1').slideToggle();
+ });
+
+		
+});	
+
+>>>>>>> Stashed changes
 
 </script>

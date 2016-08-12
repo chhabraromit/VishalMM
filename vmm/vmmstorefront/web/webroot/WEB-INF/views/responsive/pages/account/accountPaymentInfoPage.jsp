@@ -32,14 +32,18 @@
           <div>
             <div class="row">
               <div class="col-xs-12 default_color">
-                <p><c:if test="${paymentInfo.defaultPaymentInfo}">&nbsp;<strong> <spring:theme code="text.Default" text="Default" /></strong><span class="check_d"><i class="fa fa-check" aria-hidden="true"></i></span></p></c:if>
-                                    	<strong>
+                <p>
+                <c:if test="${paymentInfo.defaultPaymentInfo}"><strong> <spring:theme code="text.Default" text="Default" /></strong><span class="check_d"><i class="fa fa-check" aria-hidden="true"></i></span></p></c:if>
                                     	${fn:escapeXml(paymentInfo.accountHolderName)}
-                                    <c:if test="${paymentInfo.defaultPaymentInfo}" ></strong></c:if></p>
-                <div class="clearfix"><span class="pull-left">${fn:escapeXml(paymentInfo.cardTypeData.name)}</span><span class="pull-right"><ycommerce:testId code="paymentDetails_item_cardNumber_text" >${fn:escapeXml(paymentInfo.cardNumber)}</ycommerce:testId></span></div>
+                                    <c:if test="${paymentInfo.defaultPaymentInfo}" ></c:if></p>
+                <div class="clearfix"><span class="pull-left">${fn:escapeXml(paymentInfo.cardTypeData.name)}</span>
+                <span class="pull-right">
+                <ycommerce:testId code="paymentDetails_item_cardNumber_text" >${fn:escapeXml(paymentInfo.cardNumber)}</ycommerce:testId>
+                </span></div>
                 <div class="clearfix">
                 <p><span class="pull-right"><c:if test="${paymentInfo.expiryMonth lt 10}">0</c:if>
-                                        ${fn:escapeXml(paymentInfo.expiryMonth)}&nbsp;/&nbsp;${fn:escapeXml(paymentInfo.expiryYear)}</span></p></div>
+                                        ${fn:escapeXml(paymentInfo.expiryMonth)}&nbsp;/&nbsp;${fn:escapeXml(paymentInfo.expiryYear)}</span>
+                                        </p></div>
         
                 <div class="clearfix ">
                  <c:if test="${paymentInfo.billingAddress ne null}">

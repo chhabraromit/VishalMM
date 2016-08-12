@@ -33,7 +33,7 @@
 						<form:errors path="${path}"/>
 					</span>
 			</label>
-			<div class="control">
+			
 				<form:select id="${idKey}" path="${path}" cssClass="${selectCSSClass}" tabindex="${tabindex}" disabled="${disabled}">
 					<c:if test="${skipBlank == null || skipBlank == false}">
 						<option value="" disabled="disabled" ${empty selectedValue ? 'selected="selected"' : ''}>
@@ -42,6 +42,6 @@
 					</c:if>
 					<form:options items="${items}" itemValue="${not empty itemValue ? itemValue :'code'}" itemLabel="${not empty itemLabel ? itemLabel :'name'}"/>
 				</form:select>
-			</div>
+			
 	</ycommerce:testId>
 </template:errorSpanField>

@@ -7,6 +7,9 @@
 
 <spring:url value="/my-account/address-book" var="addressBookUrl"/>
 
+
+
+
 <c:choose>
 	<c:when test="${edit eq true }">
         <c:set var="headline"><spring:theme code="text.account.addressBook.updateAddress" text="Update Address"/></c:set>

@@ -40,7 +40,12 @@
                 </button>
             </c:if>
 			<ycommerce:testId code="addToCartButton">
-				<button id="addToCartButton" type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
+				
+				<%-- <button id="addToCartButton" type="${buttonType}" class="shop_nw_btn-responsive js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
+					<spring:theme code="basket.add.to.basket"/>
+				</button> --%>
+				
+				<button id="addToCartButton" type="${buttonType}" class="shop_nw_btn-responsive js-add-to-cart js-enable-btn " disabled="disabled">
 					<spring:theme code="basket.add.to.basket"/>
 				</button>
 			</ycommerce:testId>

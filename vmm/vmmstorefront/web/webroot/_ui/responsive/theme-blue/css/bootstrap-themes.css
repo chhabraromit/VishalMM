@@ -1,4 +1,4 @@
-@import url(../font-awesome/font-awesome.min.css);
+@import url(../css/font-awesome.min.css);
 .input-group[class*=col-] {
 	float: none;
 	padding-left: 14px !important;
