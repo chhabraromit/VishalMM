@@ -15,6 +15,7 @@
 		<%-- Theme CSS files --%>
 		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css"/>
 		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/stylenew.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/jquery.mmenu.all.css"/>
 		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/datepicker.css"/>
 				<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/owl.carousel.css"/>
 				<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/owl.theme.css"/>

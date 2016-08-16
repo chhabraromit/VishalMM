@@ -45,7 +45,10 @@
 			</c:forEach>
 		/*]]>*/
 	</script>
+	
 	<template:javaScriptAddOnsVariables/>
 	
 	<%-- generated variables from commonVariables.properties --%>
 	<script type="text/javascript" src="${sharedResourcePath}/js/generatedVariables.js"></script>
+	
+	

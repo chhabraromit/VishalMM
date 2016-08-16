@@ -45,13 +45,13 @@
 								</button>
 							</div>
 						</div>
-						<div class="col-sm-6 col-sm-pull-6">
+						<%-- <div class="col-sm-6 col-sm-pull-6">
 							<div class="accountActions">
 								<button type="button" class="btn btn-default upadte_btn backToHome">
 									<spring:theme code="text.button.cancel" text="Cancel" />
 								</button>
 							</div>
-						</div>
+						</div> --%>
 					</div>
 				</form:form>
 			</div>

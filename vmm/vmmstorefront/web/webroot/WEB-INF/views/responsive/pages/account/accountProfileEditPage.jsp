@@ -27,6 +27,8 @@
 
 <div class="col-md-6 col-sm-6 col-xs-12 margn_bot_25">
         <div class="personal_form bx_shd_n pad_none">
+        			<p>All Fields marked with * are mandatory</p>
+        
         <!--  <p>All Fields marked with * are mandatory</p>
 	 <div class="container-lg col-md-6">
 		<div class="account-section-content"> -->
@@ -36,7 +38,7 @@
 					<formElement:formSelectBox idKey="profile.title"
 						labelKey="profile.title" path="titleCode" mandatory="true"
 						skipBlank="false" skipBlankMessageKey="form.select.empty"
-						items="${titleData}" selectCSSClass="form-control" />
+						items="${titleData}" selectCSSClass="form-control"/>
 			
 					<formElement:formInputBox idKey="profile.firstName"
 						labelKey="profile.firstName" path="firstName" inputCSS="text"
@@ -44,26 +46,31 @@
 					<formElement:formInputBox idKey="profile.lastName"
 						labelKey="profile.lastName" path="lastName" inputCSS="text"
 						mandatory="true" />
-
+			  <div class="form-group">
+                <label for="exampleInputPassword1">Mobile Number</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" >
+              </div>
+              
 					<div class="row">
 						<div class="col-sm-6 col-sm-push-6">
+							<div class="accountActions">
+							<ycommerce:testId
+									code="personalDetails_cancelPersonalDetails_button">
+									<button type="button" class="btn btn-default upadte_btn">
+										<spring:theme code="text.account.profile.cancel" text="Cancel" />
+									</button>
+								</ycommerce:testId>
+								
+							</div>
+						</div>
+						<div class="col-sm-6 col-sm-pull-6">
 							<div class="accountActions">
 								<ycommerce:testId
 									code="personalDetails_savePersonalDetails_button">
 									<button type="submit" class="btn btn-default upadte_btn">
 										<spring:theme code="text.account.profile.saveUpdates"
 											text="Save Updates" />
-									</button>
-								</ycommerce:testId>
-							</div>
-						</div>
-						<div class="col-sm-6 col-sm-pull-6">
-							<div class="accountActions">
-								<ycommerce:testId
-									code="personalDetails_cancelPersonalDetails_button">
-									<button type="button" class="btn btn-default upadte_btn">
-										<spring:theme code="text.account.profile.cancel" text="Cancel" />
-									</button>
+									</button>	
 								</ycommerce:testId>
 							</div>
 						</div>

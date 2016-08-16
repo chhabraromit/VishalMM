@@ -15,176 +15,184 @@
 </cms:pageSlot>
 
 <header class="js-mainHeader">
-	<nav class="navigation navigation--top hidden-xs hidden-sm">
-		<div class="row">
-			<div class="col-sm-12 col-md-3">
-				<div class="nav__left js-site-logo">
-					<cms:pageSlot position="SiteLogo" var="logo" limit="1">
+	
+	<%-- a hook for the my account links in desktop/wide desktop--%>
+	
+<nav class="navbar navbar-inverse top_navbar display_b">
+  <div class="container">
+    <nav id="bs-navbar" class="">
+      <ul class="nav navbar-nav country_sel">
+        <li></li>
+        <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="#" >GBP (&euro;) <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-color disply-li ">
+            <li><a href="#"><img src="${themeResourcePath}/images/flag.png" class="img-responsive" /> GBP (&euro;)</a></li>
+            <li><a href="#"><img src="${themeResourcePath}/images/india.png" class="img-responsive" /> EUR (&euro;)</a></li>
+          </ul>
+        </li>
+        <li> <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Find a store</a> </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right sign_in_tab">
+        <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Collection <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+          <ul class="dropdown-menu mega-dropdown-menu container dropdown-color dropdown-right-mrgn">
+            <li class="col-sm-4">
+              <ul class="drp-dwn-ul">
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Persnol Detail</a></li>
+                <li><a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Password</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-4">
+              <ul class="drp-dwn-ul">
+                <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email Address</a></li>
+                <li><a href="#"><i class="fa fa-hdd-o" aria-hidden="true"></i> Order History</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-4">
+              <ul class="drp-dwn-ul">
+                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i> Payment Detail</a></li>
+                <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i> Address Book</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i> Sign in / Register</a></li>
+        <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Basket</a></li>
+      </ul>
+    </nav>
+    <!--/.navbar-collapse -->
+  </div>
+</nav>
+
+<div class="container-fluid head_bg display_b" >
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-3"> <cms:pageSlot position="SiteLogo" var="logo" limit="1">
 						<cms:component component="${logo}" element="div" class="yComponentWrapper"/>
-					</cms:pageSlot>
-				</div>
+					</cms:pageSlot> </div>
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <div class="" style="border-radius:15px; background-color:#fff;">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for toys" style="background-color:transparent; border:none;">
+            <span class="input-group-btn">
+            <button class="btn btn-default" style="background-color:transparent; border:none;" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="navbar">
+          <nav class="navbar navbar-default navbar-static-top nav-main-menu" role="navigation">
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <ul class="nav navbar-nav  main_nav">
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toys <b class="caret"></b></a>
+                  <ul class="dropdown-menu drp-dwn-1">
+                    <li><a href="#">Dropdown Link 1</a></li>
+                    <li><a href="#">Dropdown Link 2</a></li>
+                    <li><a href="#">Dropdown Link 3</a></li>
+                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Link 4</a>
+                      <ul class="dropdown-menu drp-dwn-2">
+                        <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                        <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                        <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                        <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                        <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Dropdown Link 5</a></li>
+                  </ul>
+                </li>
+                <li> <a href="#">Baby</a> </li>
+                <li> <a href="#">Outdoor</a> </li>
+                <li> <a href="#">Gift</a> </li>
+                <li> <a href="#">Special Offers</a> </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!--<div class="row">
+       <div class="col-md-3 col-xs-12">
+       <div class="bannr_tab">
+       <a href="#">FREE HOME DELIVERY</a>
+       <a href="#">FINDOUT MORE</a>
+       </div>
+       
+       </div>
+    
+    
+    </div>-->
+  </div>
+</div>
+<div class="container-fluid head_bg display_n">
+
+  <nav class="mob-menu">
+     <div id="page">
+			<div class="header">
+				<a href="#menu"></a>
+				Demo
 			</div>
 			
-			<div class="col-sm-12 col-md-9">
-			 <div class="site-search">
-								<cms:pageSlot position="SearchBox" var="component">
-									<cms:component component="${component}" element="div"/>
-								</cms:pageSlot>
-							</div>
-			</div>
-			<div class="col-sm-12 col-md-9">
-				<div class="nav__right">
-					<ul class="nav__links nav__links--account">
-						<c:if test="${empty hideHeaderLinks}">
-							<c:if test="${uiExperienceOverride}">
-								<li class="backToMobileLink"><c:url
-										value="/_s/ui-experience?level=" var="backToMobileStoreUrl" />
-									<a href="${backToMobileStoreUrl}"> <spring:theme
-											code="text.backToMobileStore" />
-									</a>
-								</li>
-							</c:if>
-
-							<sec:authorize ifNotGranted="ROLE_ANONYMOUS">
-								<c:set var="maxNumberChars" value="25" />
-								<c:if test="${fn:length(user.firstName) gt maxNumberChars}">
-									<c:set target="${user}" property="firstName"
-										value="${fn:substring(user.firstName, 0, maxNumberChars)}..." />
-								</c:if>
-
-								<li class="logged_in js-logged_in">
-									<ycommerce:testId code="header_LoggedUser">
-										<spring:theme code="header.welcome" arguments="${user.firstName},${user.lastName}" htmlEscape="true" />
-									</ycommerce:testId>
-								</li>
-							</sec:authorize>
-
-							 <cms:pageSlot position="HeaderLinks" var="link">
-								 <cms:component component="${link}" element="li" />
-							 </cms:pageSlot>
-
-							<sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
-								<li class="liOffcanvas">
-									<ycommerce:testId code="header_Login_link">
-										<a href="<c:url value='/login'/>">
-											<spring:theme code="header.link.login" />
-										</a>
-									</ycommerce:testId>
-								</li>
-							</sec:authorize>
-
-							<sec:authorize ifNotGranted="ROLE_ANONYMOUS">
-								<li class="liOffcanvas">
-									<ycommerce:testId code="header_signOut">
-										<a href="<c:url value='/logout'/>">
-											<spring:theme code="header.link.logout" />
-										</a>
-									</ycommerce:testId>
-								</li>
-							</sec:authorize>
-
-						</c:if>
-					</ul>
-				</div>
-			</div>
+			<nav id="menu">
+				<ul>
+					<li><a href="#">GBP (&euro;)</a>
+					
+					<ul class="disply-li ">
+							 <li><a href="#"><img src="images/flag.png" class="img-responsive" /> GBP (&euro;)</a></li>
+            <li><a href="#"><img src="images/india.png" class="img-responsive" /> EUR (&euro;)</a></li>
+								</ul>
+					</li>
+					<li><a href="#about"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Sign in / Register</a>
+						<ul>
+							<li><a href="#">History</a></li>
+							<li><a href="#">The team</a></li>
+							<li><a href="#">Our address</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Toys</a>
+					<ul>
+							<li><a href="#">Action Figures and Playsets</a></li>
+							<li><a href="#">Construction and Cars</a></li>
+							<li><a href="#">Lego And Bricks</a></li>
+							<li><a href="#">Pre-school</a></li>
+							<li><a href="#">2 For 15</a></li>
+						</ul>
+					
+					</li>
+						<li><a href="#">Baby</a></li>
+							<li><a href="#">Outdoor</a></li>
+							<li><a href="#">Video Games</a></li>
+							<li><a href="#">Gifts</a></li>
+							<li><a href="#">Special Offers</a></li>
+				</ul>
+			</nav>
 		</div>
-	</nav>
-	<%-- a hook for the my account links in desktop/wide desktop--%>
-	<div class="hidden-xs hidden-sm js-secondaryNavAccount collapse" id="accNavComponentDesktopOne">
-		<ul class="nav__links">
-
-		</ul>
-	</div>
-	<div class="hidden-xs hidden-sm js-secondaryNavCompany collapse" id="accNavComponentDesktopTwo">
-		<ul class="nav__links js-nav__links">
-
-		</ul>
-	</div>
-	<nav class="navigation navigation--middle js-navigation--middle">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="mobile__nav__row mobile__nav__row--table">
-					<div class="mobile__nav__row--table-group">
-						<div class="mobile__nav__row--table-row">
-							<div class="mobile__nav__row--table-cell visible-xs hidden-sm">
-								<button class="mobile__nav__row--btn btn mobile__nav__row--btn-menu js-toggle-sm-navigation"
-										type="button">
-									<span class="glyphicon glyphicon-align-justify"></span>
-								</button>
-							</div>
-
-							<div class="mobile__nav__row--table-cell visible-xs mobile__nav__row--seperator">
-								<ycommerce:testId code="header_search_activation_button">
-									<button	class="mobile__nav__row--btn btn mobile__nav__row--btn-search js-toggle-xs-search hidden-sm hidden-md hidden-lg" type="button">
-										<span class="glyphicon glyphicon-search"></span>
-									</button>
-								</ycommerce:testId>
-							</div>
-
-							<c:if test="${empty hideHeaderLinks}">
-								<ycommerce:testId code="header_StoreFinder_link">
-									<div class="mobile__nav__row--table-cell hidden-sm hidden-md hidden-lg mobile__nav__row--seperator">
-										<a href="<c:url value="/store-finder"/>" class="mobile__nav__row--btn mobile__nav__row--btn-location btn">
-											<span class="glyphicon glyphicon-map-marker"></span>
-										</a>
-									</div>
-								</ycommerce:testId>
-							</c:if>
-
-							<cms:pageSlot position="MiniCart" var="cart" element="div" class="miniCartSlot componentContainer mobile__nav__row--table hidden-sm hidden-md hidden-lg">
-								<cms:component component="${cart}" element="div" class="mobile__nav__row--table-cell" />
-							</cms:pageSlot>
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row desktop__nav">
-				<div class="nav__left col-xs-12 col-sm-6">
-					<div class="row">
-						<div class="col-sm-2 hidden-xs visible-sm mobile-menu">
-							<button class="btn js-toggle-sm-navigation" type="button">
-								<span class="glyphicon glyphicon-align-justify"></span>
-							</button>
-						</div>
-						<%-- <div class="col-sm-10">
-							<div class="site-search">
-								<cms:pageSlot position="SearchBox" var="component">
-									<cms:component component="${component}" element="div"/>
-								</cms:pageSlot>
-							</div>
-						</div> --%>
-					</div>
-				</div>
-				<div class="nav__right col-xs-6 col-xs-6 hidden-xs">
-					<ul class="nav__links nav__links--shop_info">
-						<li>
-							<c:if test="${empty hideHeaderLinks}">
-								<ycommerce:testId code="header_StoreFinder_link">
-									<div class="nav-location hidden-xs">
-										<a href="<c:url value="/store-finder"/>" class="btn">
-											<span class="glyphicon glyphicon-map-marker"></span>
-										</a>
-									</div>
-								</ycommerce:testId>
-							</c:if>
-
-						</li>
-
-						<li>
-							<cms:pageSlot position="MiniCart" var="cart" element="div" class="componentContainer">
-
-								<cms:component component="${cart}" element="div"/>
-
-							</cms:pageSlot>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<a id="skiptonavigation"></a>
-	<nav:topNavigation />
+  </nav>
+  
+  <div class="row margn_bot_15">
+    <div class="col-xs-2 col-sm-1 mobile_manu">
+    <a href="#menu"> <i class="fa fa-bars" aria-hidden="true"></i></a>
+    </div>
+    <div class="col-xs-6 col-sm-9 text-center"> <a href="index.html"><img src="images/v_mart_logo_mob.png" /></a> </div>
+    <div class="col-xs-2 col-sm-1 text-right mobile_manu"> <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> </div>
+    <div class="col-xs-2 col-sm-1 text-right mobile_manu"> <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a> </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="" style="border-radius:15px; background-color:#fff;">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for toys" style="background-color:transparent; border:none;">
+          <span class="input-group-btn">
+          <button class="btn btn-default" style="background-color:transparent; border:none; color: #1f96f4;" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+	
 </header>
 
 

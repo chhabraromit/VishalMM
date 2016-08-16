@@ -66,7 +66,7 @@
 			</button>
 		</c:when>
 		<c:otherwise>
-			<button class="btn btn-default btn-block js-pickup-in-store-button glyphicon-map-marker btn-icon" disabled="disabled" id="product_${product.code}${entryNumber}" type="submit" data-productavailable="${product.availableForPickup}"
+			<button class="set_default_btn js-pickup-in-store-button " disabled="disabled" id="product_${product.code}${entryNumber}" type="submit" data-productavailable="${product.availableForPickup}"
 			data-productcart='${product.price.formattedValue}'
 			data-productcart-variants='{
 					<c:if test="${not empty product.baseOptions[0].selected.variantOptionQualifiers}">

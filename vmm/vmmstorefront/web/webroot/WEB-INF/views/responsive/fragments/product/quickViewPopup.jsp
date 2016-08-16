@@ -10,7 +10,6 @@
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="storepickup" tagdir="/WEB-INF/tags/responsive/storepickup" %>
-
 <c:url value="${product.url}" var="productUrl" />
 
 <div class="quick-view-popup">
