@@ -25,8 +25,8 @@
         <li></li>
         <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="#" >GBP (&euro;) <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-color disply-li ">
-            <li><a href="#"><img src="images/flag.png" class="img-responsive" /> GBP (&euro;)</a></li>
-            <li><a href="#"><img src="images/india.png" class="img-responsive" /> EUR (&euro;)</a></li>
+            <li><a href="#"><img src="${themeResourcePath}/images/flag.png" class="img-responsive" /> GBP (&euro;)</a></li>
+            <li><a href="#"><img src="${themeResourcePath}/images/india.png" class="img-responsive" /> EUR (&euro;)</a></li>
           </ul>
         </li>
         <li> <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Find a store</a> </li>
@@ -67,7 +67,9 @@
 <div class="container-fluid head_bg display_b" >
   <div class="container ">
     <div class="row">
-      <div class="col-md-3"> <a href="index.html"><img src="images/v_mart_logo.png" /></a> </div>
+      <div class="col-md-3"> <cms:pageSlot position="SiteLogo" var="logo" limit="1">
+						<cms:component component="${logo}" element="div" class="yComponentWrapper"/>
+					</cms:pageSlot> </div>
       <div class="col-md-9 col-sm-9 col-xs-12">
         <div class="" style="border-radius:15px; background-color:#fff;">
           <div class="input-group">
