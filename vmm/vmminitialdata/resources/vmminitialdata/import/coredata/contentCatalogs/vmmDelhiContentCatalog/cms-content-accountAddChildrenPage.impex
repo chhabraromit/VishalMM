@@ -38,27 +38,24 @@ $jarResourceCms=$config-jarResourceCmsValue
 
 
 # CMS Navigation Nodes  
-INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);children(uid,$contentCV)[mode=append];links(uid, $contentCV);&nodeRef;
-;AccountLeftNavNode;;My Account;SiteRootNode;;AccountProfileLink,AccountAddressBookLink,AccountPaymentDetailsLink,AccountOrderHistoryLink;AccountLeftNavNode
+#INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);children(uid,$contentCV)[mode=append];links(uid, $contentCV);&nodeRef;
+#;AccountLeftNavNode;;My Account;SiteRootNode;;AccountProfileLink,AccountAddressBookLink,AccountPaymentDetailsLink,AccountOrderHistoryLink;AccountLeftNavNode
 
 # Navigation Bar Component
-INSERT_UPDATE AccountNavigationComponent;$contentCV[unique=true];uid[unique=true];name;navigationNode(&nodeRef);styleClass;&componentRef
-;;AccountLeftNavigationComponent;Account Left Navigation Component;AccountLeftNavNode;;AccountLeftNavigationComponent
+#INSERT_UPDATE AccountNavigationComponent;$contentCV[unique=true];uid[unique=true];name;navigationNode(&nodeRef);styleClass;&componentRef
+#;;AccountLeftNavigationComponent;Account Left Navigation Component;AccountLeftNavNode;;AccountLeftNavigationComponent
 
 ###Content Slots###
 ###ContentSlot Sample (coredata)###
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
-;;SideContent-add-edit-childrenCS;Side Content Slot for Add Edit children;true
-;;BodyContent-add-edit-childrenCS;Body Content Slot for Add Edit children;true
+;;SideContent-add-edit-children;Side Content Slot for Add Edit children;true
+;;BodyContent-add-edit-children;Body Content Slot for Add Edit children;true
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]
-;;SideContent-add-edit-childrenCS
-;;BodyContent-add-edit-childrenCS
 
 ### ContentSlotForPage Sample( (store)) ###
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='add-edit-children'];contentSlot(uid,$contentCV)[unique=true];;;
-;;SideContent-add-edit-childrenCSP;SideContent;;SideContent-add-edit-childrenCS;;;
-;;BodyContent-add-edit-childrenCSP;BodyContent;;BodyContent-add-edit-childrenCS;;;
+;;SideContent-add-edit-children;SideContent;;SideContent-add-edit-children;;;
+;;BodyContent-add-edit-children;BodyContent;;BodyContent-add-edit-children;;;
 
 ### Content Slot for Template (coredata) already there###
 #INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AccountPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
