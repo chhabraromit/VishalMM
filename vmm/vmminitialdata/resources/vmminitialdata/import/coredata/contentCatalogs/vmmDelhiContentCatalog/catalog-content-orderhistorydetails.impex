@@ -1,0 +1,34 @@
+$vmmDelhicontentcatalogue=catalogVersion(catalog(id),version)[default=vmmDelhiContentCatalog:Online]
+$contentCatalog=vmmDelhiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+
+
+INSERT_UPDATE PageTemplate	;$vmmDelhicontentcatalogue[unique=true]	;uid[unique=true]		;name				;frontendTemplateName			;restrictedPageTypes(code)	;active[default=true]
+				;					;orderHistoryDetailsPageTemplate;Order History Details Template	;account/orderHistoryDetailsTemplate	;ContentPage
+
+
+INSERT_UPDATE ContentSlotName	;name[unique=true]	;template(uid,$contentCV)[unique=true][default='orderHistoryDetailsPageTemplate']	;validComponentTypes(code)	;compTypeGroup(code)	
+				;orderdetailsheader	;											;				;			
+				;orderdetailsoverview	;											;				;			
+				;orderDetailsItemsinfo	;											;				;			
+				;orderdetailsshippinginfo;											;				;			
+				;orderdetailstotalinfo	;											;				;			
+				;orderdetailsactioncomponent;											;				;			
+
+
+INSERT_UPDATE ContentSlot		;$contentCV[unique=true];uid[unique=true]	; name 			;active ; cmsComponents(uid,$contentCV)
+					;			;order-details-header	;order details header	;true	;AccountOrderDetailsHeadlineComponent
+					;			;order-details-overview	;order details overview	;true	;AccountOrderDetailsOverviewComponent
+					;			;order-Details-Itemsinfo	;order Details Items info;true	;AccountOrderDetailsItemsComponent
+					;			;order-details-shippinginfo;order details shipping info;true	;AccountOrderDetailsShippingComponent
+					;			;order-details-totalinfo	;order details total info;true	;AccountOrderDetailsTotalsComponent
+					;			;order-details-actioncomponent;order details action component;true;AccountOrderDetailsActionsComponent	
+
+
+INSERT_UPDATE ContentSlotForTemplate	;$contentCV[unique=true];uid[unique=true]	;position[unique=true]	;pageTemplate(uid,$contentCV)[unique=true][default='orderHistoryDetailsPageTemplate']	;contentSlot(uid,$contentCV)[unique=true]	;allowOverwrite
+					;			;orderdetailsheader	;orderdetailsheader			;									;order-details-header				;true							
+					;			;orderdetailsoverview	;orderdetailsoverview			;									;order-details-overview				;true				
+					;			;orderDetailsItemsinfo	;orderDetailsItemsinfo			;									;order-Details-Itemsinfo			;true
+					;			;orderdetailsshippinginfo;orderdetailsshippinginfo		;									;order-details-shippinginfo			;true
+					;			;orderdetailstotalinfo	;orderdetailstotalinfo			;									;order-details-totalinfo			;true
+					;			;orderdetailsactioncomponent;	orderdetailsactioncomponent	;									;order-details-actioncomponent			;true

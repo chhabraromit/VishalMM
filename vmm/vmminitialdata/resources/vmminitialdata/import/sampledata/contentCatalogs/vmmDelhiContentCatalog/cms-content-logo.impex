@@ -1,0 +1,13 @@
+$contentCatalog=vmmDelhiContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang=en
+$siteResource=jar:com.vmm.initialdata.constants.VmmInitialDataConstants&/vmminitialdata/import/sampledata/contentCatalogs/$contentCatalog
+
+
+INSERT_UPDATE Media	;$contentCV[unique=true];code[unique=true]				;realfilename			;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]	;mime[default='image/jpg']	;description	;altText;mediaFormat(qualifier)	
+			;			;/images/theme/logo_hybris_responsive.svg	;logo_hybris_responsive.svg	;$siteResource/images/landing_pages/v_mart_logo.png						;				;		;	;desktop		
+
+			
+
+INSERT_UPDATE Media		;$contentCV[unique=true]	;code[unique=true]		;realfilename		;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]	;mime[default='image/jpg']			;description										;altText											;mediaFormat(qualifier)								;mediaContainer(qualifier,$contentCV)										
+						;							;header.jpg				;header.jpg			;$siteResource/images/landing_pages/banner.png													;									;													;													;desktop																			;vmmDelhiSite-homepage-spalsh-en		

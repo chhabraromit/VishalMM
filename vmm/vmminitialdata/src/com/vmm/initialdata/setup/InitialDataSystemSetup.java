@@ -45,7 +45,9 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 	private CoreDataImportService coreDataImportService;
 	private SampleDataImportService sampleDataImportService;
-
+	
+	
+	/vmminitialdata/resources/vmminitialdata	
 	@Override
 	@SystemSetupParameterMethod
 	public List<SystemSetupParameter> getInitializationOptions()
@@ -88,6 +90,11 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 		getSampleDataImportService().execute(this, context, importData);
 		getEventService().publishEvent(new SampleDataImportedEvent(context, importData));
+		
+		getSetupImpexService().importImpexFile(String.format("/%s//import/coredata/contentCatalogs/vmmDelhiContentCatalog/catalog-content-orderhistorydetails.impex", VmmInitialDataConstants.EXTENSIONNAME),true);
+		getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-orderhistorydetailspage.impex", VmmInitialDataConstants.EXTENSIONNAME),true);
+		getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-logo.impex", VmmInitialDataConstants.EXTENSIONNAME),true);
+
 	}
 
 	public CoreDataImportService getCoreDataImportService()
