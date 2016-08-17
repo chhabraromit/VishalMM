@@ -16,10 +16,7 @@ $lang=en
 INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
 ;;AccountAddEditChildrenComponent;Account Edit Children Component;accountEditChildrenPage.jsp;;AccountAddEditChildrenComponent
 
-
-
 ###ContentSlot Sample (sampledata)###
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-;;SideContent-add-edit-children;Side Content Slot for Add Edit children;true;AccountLeftNavigationComponent;;;
+;;SideContent-add-edit-children;Side Content Slot for Add Edit children;true;;;;
 ;;BodyContent-add-edit-children;Body Content Slot for Add Edit children;true;AccountAddEditChildrenComponent;;;
-
