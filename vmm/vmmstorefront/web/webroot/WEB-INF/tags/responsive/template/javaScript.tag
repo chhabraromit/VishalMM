@@ -114,48 +114,13 @@
 
 
 <cms:previewJS cmsPageRequestContextData="${cmsPageRequestContextData}" />
-<<<<<<< Updated upstream
-<script type="text/javascript">
-			$(function() {
-				$('nav#menu').mmenu({
-					extensions	: [ 'effect-slide-menu', 'pageshadow' ],
-					searchfield	: false,
-					counters	: true,
-					navbar 		: {
-						title		: ''
-					},
-					navbars		: [
-						 {
-							position	: 'top',
-							content		: [
-								'prev',
-								'title',
-								'close'
-							]
-						}, 
-					]
-				});
-			});
-		</script>
-		<script>
 
 
-$('.nav#menu').click(function(){
-	alert('gh');
-	$(this).toggleClass('mob-cross');
-	$('.mob-menu').fadeToggle();
-	$('body').toggleClass('sca');
-});
 
-   
-           
-  $(window).resize(function(){
-    
-        $('.mob-menu').hide();
-        $('.mob-toggle').removeClass('mob-cross');
-        $('body').removeClass('sca');
-   });
-=======
+
+
+</script>
+
 <script>
 $(document).ready(function(){
 	$('.con_1').slideUp();
@@ -185,6 +150,5 @@ $(document).ready(function(){
 		
 });	
 
->>>>>>> Stashed changes
 
-</script>
+</script> 
