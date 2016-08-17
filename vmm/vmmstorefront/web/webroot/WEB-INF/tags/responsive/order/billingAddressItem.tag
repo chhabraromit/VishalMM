@@ -5,7 +5,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
 <div class="label-order">
-    <spring:theme code="text.account.paymentDetails.billingAddress"/>
+   <h4> <spring:theme code="text.account.paymentDetails.billingAddress"/></h4>
 </div>
 <div class="value-order">
     <order:addressItem address="${order.paymentInfo.billingAddress}"/>

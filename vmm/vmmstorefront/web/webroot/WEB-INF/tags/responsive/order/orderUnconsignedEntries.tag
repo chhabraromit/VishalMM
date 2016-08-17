@@ -4,7 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="order" tagdir="/WEB-INF/tags/responsive/order" %>
 
-
 <c:forEach items="${order.unconsignedEntries}" var="entry" varStatus="loop">
     <div class="well well-quinary well-xs">
         <div class="well-headline orderPending">

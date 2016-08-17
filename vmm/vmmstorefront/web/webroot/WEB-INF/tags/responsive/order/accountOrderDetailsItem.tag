@@ -8,7 +8,48 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="order" tagdir="/WEB-INF/tags/responsive/order" %>
 
-<div class="well well-quinary well-xs">
+<!-- <div class="container">
+  
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12 margn_bot_50">
+      <h2 class="margn_bot_25 margn_tp_n">Order History</h2>
+      <div class="order_history_div"> -->
+       <!--  <div>
+          <p class="fnt_16"><strong>Order:</strong> 000010102</p>
+          <p class="clearfix"><span class="pull-left">Order Status:</span><span class="pull-right">Complete</span></p>
+          <p class="clearfix"><span class="pull-left">Date placed:</span><span class="pull-right">May 23 2016, 13:50PM</span></p>
+          <div class="clearfix margn_top_15"><span class="pull-left fnt_20"><strong>Total</strong></span> <span class="pull-right fnt_20"><strong>$107.80</strong></span></div>
+          <div class="dvider_t"></div>
+        </div> -->
+        <%-- <h4><spring:theme code="text.account.order.shipto"/></h4>
+        <div class="row">
+          <div class="col-xs-6">
+            <address><order:addressItem address="${orderData.deliveryAddress}"/>
+            </address>
+          </div>
+          <div class="col-xs-6 text-right track_an"> 	<a href="#">Track Your Order</a> </div>
+        </div> --%>
+      <!-- </div>
+    </div> -->
+     <div class="">
+<!--       <h2 class="margn_bot_25 margn_tp_n">Item Details</h2>
+ -->      <!-- <div class="order_history_div">
+        <div class="row"> -->
+          <ycommerce:testId code="orderDetail_itemBody_section">
+		<c:forEach items="${consignment.entries}" var="entry" varStatus="loop">
+			<order:orderEntryDetails orderEntry="${entry.orderEntry}" consignmentEntry="${entry}" order="${order}" itemIndex="${loop.index}"/>
+		</c:forEach>
+	</ycommerce:testId>
+        </div>
+        
+        
+      <!-- </div>
+    </div> -->
+ <!--  </div>
+</div> -->
+
+
+<%-- <div class="well well-quinary well-xs">
 	<ycommerce:testId code="orderDetail_itemHeader_section">			
 		<div class="well-headline">
             <ycommerce:testId code="orderDetail_consignmentStatus_label">
@@ -67,13 +108,13 @@
                                 </c:choose>
                             </c:if>
                         </c:otherwise>
-                    </c:choose>
+                    </c:choose> 
                 </div>
             </div>
         </div>
 	</ycommerce:testId>
-</div>
-	
+</div> --%>
+<%-- 	
 <ul class="item-list">
     <li class="hidden-xs hidden-sm">
         <ul class="item-list-header">
@@ -90,4 +131,4 @@
 			<order:orderEntryDetails orderEntry="${entry.orderEntry}" consignmentEntry="${entry}" order="${order}" itemIndex="${loop.index}"/>
 		</c:forEach>
 	</ycommerce:testId>
-</ul>
+</ul> --%>

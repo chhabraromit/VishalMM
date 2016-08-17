@@ -21,7 +21,7 @@
 
 <c:url value="${orderEntry.product.url}" var="productUrl"/>
 <c:set var="entryStock" value="${orderEntry.product.stock.stockLevelStatus.code}"/>
-<li class="item-list-item">
+
 
     <%-- chevron for multi-d products --%>
     <div class="hidden-xs hidden-sm item-toggle">
@@ -35,7 +35,7 @@
     </div>
 
     <%-- product image --%>
-    <div class="item-image">
+  <div class="col-lg-4 col-md-4 col-md-4 col-xs-5">
         <ycommerce:testId code="orderDetail_productThumbnail_link">
             <a href="${productUrl}">
                 <product:productPrimaryImage product="${orderEntry.product}" format="thumbnail"/>
@@ -44,7 +44,7 @@
     </div>
 
     <%-- product name, code, promotions --%>
-    <div class="item-info">
+   <div class="col-lg-8 col-md-8 col-md-8 col-xs-7 pad_lft">
         <ycommerce:testId code="orderDetails_productName_link">
             <a href="${orderEntry.product.purchasable ? productUrl : ''}"><span class="item-name">${fn:escapeXml(orderEntry.product.name)}</span></a>
         </ycommerce:testId>
@@ -105,7 +105,7 @@
     </div>
 
     <%-- quantity --%>
-    <div class="item-quantity hidden-xs hidden-sm">
+    <div class="col-lg-8 col-md-8 col-md-8 col-xs-7 pad_lft pull-right">
         <c:forEach items="${orderEntry.product.baseOptions}" var="option">
             <c:if test="${not empty option.selected and option.selected.url eq orderEntry.product.url}">
                 <c:forEach items="${option.selected.variantOptionQualifiers}" var="selectedOption">
@@ -121,7 +121,7 @@
         </c:forEach>
 
         <ycommerce:testId code="orderDetails_productQuantity_label">
-            <label class="visible-xs visible-sm"><spring:theme code="text.account.order.qty"/>:</label>
+            <label class=""><spring:theme code="text.account.order.qty"/>:</label>
             <span class="qtyValue">
                 <c:choose>
                     <c:when test="${consignmentEntry ne null }">
@@ -136,7 +136,7 @@
     </div>
 
      <%-- total --%>
-    <div class="item-total hidden-xs hidden-sm">
+    <div class="col-lg-8 col-md-8 col-md-8 col-xs-7 pad_lft pull-right">
         <ycommerce:testId code="orderDetails_productTotalPrice_label">
             <format:price priceData="${orderEntry.totalPrice}" displayFreeForZero="true"/>
         </ycommerce:testId>
@@ -178,9 +178,9 @@
             </div>
         </div>
     </div>
-</li>
 
-<li>
+
+<div class="col-lg-12 col-md-12 col-md-12 col-xs-12 pad_lft ">
 	<c:if test="${empty targetUrl}">
 		<spring:url value="/my-account/order/{/orderCode}/getReadOnlyProductVariantMatrix" var="targetUrl">
 			<spring:param name="orderCode" value="${order.code}"/>
