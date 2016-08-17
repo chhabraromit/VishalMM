@@ -163,9 +163,8 @@ $('.nav#menu').click(function(){
         $('.mob-toggle').removeClass('mob-cross');
         $('body').removeClass('sca');
    });
->>>>>>> a4ada02c9acccb4bbbd896f45e57b8e66ba5077c
 
-<script>
+
 $(document).ready(function(){
 	$('.con_1').slideUp();
 	$('.gh').addClass( 'fa-plus')
