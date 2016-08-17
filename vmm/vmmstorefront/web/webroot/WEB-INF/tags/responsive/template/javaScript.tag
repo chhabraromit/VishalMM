@@ -68,7 +68,7 @@
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.imagegallery.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.langcurrencyselector.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.minicart.js"></script>
-		<script type="text/javascript" src="${commonResourcePath}/js/acc.navigation.js"></script>
+		<%-- <script type="text/javascript" src="${commonResourcePath}/js/acc.navigation.js"></script> --%>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.order.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.paginationsort.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.payment.js"></script>
@@ -155,7 +155,7 @@ $('.nav#menu').click(function(){
         $('.mob-toggle').removeClass('mob-cross');
         $('body').removeClass('sca');
    });
-=======
+
 <script>
 $(document).ready(function(){
 	$('.con_1').slideUp();
