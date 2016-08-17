@@ -25,39 +25,51 @@
         <li></li>
         <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="#" >GBP (&euro;) <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-color disply-li ">
-            <li><a href="#"><img src="images/flag.png" class="img-responsive" /> GBP (&euro;)</a></li>
-            <li><a href="#"><img src="images/india.png" class="img-responsive" /> EUR (&euro;)</a></li>
+            <li><a href="#"><img src="${themeResourcePath}/images/flag.png" class="img-responsive" /> GBP (&euro;)</a></li>
+            <li><a href="#"><img src="${themeResourcePath}/images/india.png" class="img-responsive" /> EUR (&euro;)</a></li>
           </ul>
         </li>
         <li> <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Find a store</a> </li>
+     
       </ul>
     </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right sign_in_tab">
-        <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Collection <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-          <ul class="dropdown-menu mega-dropdown-menu container dropdown-color dropdown-right-mrgn">
-            <li class="col-sm-4">
-              <ul class="drp-dwn-ul">
-                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Persnol Detail</a></li>
-                <li><a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Password</a></li>
-              </ul>
-            </li>
-            <li class="col-sm-4">
-              <ul class="drp-dwn-ul">
-                <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email Address</a></li>
-                <li><a href="#"><i class="fa fa-hdd-o" aria-hidden="true"></i> Order History</a></li>
-              </ul>
-            </li>
-            <li class="col-sm-4">
-              <ul class="drp-dwn-ul">
-                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i> Payment Detail</a></li>
-                <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i> Address Book</a></li>
-              </ul>
-            </li>
-          </ul>
+      <li>
+      <sec:authorize ifNotGranted="ROLE_ANONYMOUS">
+								<c:set var="maxNumberChars" value="25" />
+								<c:if test="${fn:length(user.firstName) gt maxNumberChars}">
+									<c:set target="${user}" property="firstName"
+										value="${fn:substring(user.firstName, 0, maxNumberChars)}..." />
+								</c:if>
+
+								<li class="logged_in js-logged_in">
+									<ycommerce:testId code="header_LoggedUser">
+									
+									<li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>
+										<spring:theme code="header.welcome" arguments="${user.firstName},${user.lastName}" htmlEscape="true" /></a>
+									</ycommerce:testId>
+								</li>
+							</sec:authorize>
+      
+      
+      </li>
+     
+        
+        
+        
+        <li class="dropdown mega-dropdown">
+         <cms:pageSlot position="HeaderLinks" var="link">
+								 <cms:component component="${link}" element="li" />
+							 </cms:pageSlot>
         </li>
-        <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i> Sign in / Register</a></li>
-        <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Basket</a></li>
+        <sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
+        <li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i> <spring:theme code="header.link.login" /></a></li>
+        </sec:authorize>
+        <sec:authorize ifNotGranted="ROLE_ANONYMOUS">
+        <li><a href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> <spring:theme code="header.link.logout" /></a></li>
+        </sec:authorize>
+        <li><a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <spring:theme code="header.link.basket" /></a></li>
       </ul>
     </nav>
     <!--/.navbar-collapse -->
@@ -67,7 +79,9 @@
 <div class="container-fluid head_bg display_b" >
   <div class="container ">
     <div class="row">
-      <div class="col-md-3"> <a href="index.html"><img src="images/v_mart_logo.png" /></a> </div>
+      <div class="col-md-3"> <cms:pageSlot position="SiteLogo" var="logo" limit="1">
+						<cms:component component="${logo}" element="div" class="yComponentWrapper"/>
+					</cms:pageSlot> </div>
       <div class="col-md-9 col-sm-9 col-xs-12">
         <div class="" style="border-radius:15px; background-color:#fff;">
           <div class="input-group">
@@ -81,7 +95,8 @@
     <div class="row">
       <div class="col-md-12">
         <div id="navbar">
-          <nav class="navbar navbar-default navbar-static-top nav-main-menu" role="navigation">
+        <nav:topNavigation />
+          <%-- <nav class="navbar navbar-default navbar-static-top nav-main-menu" role="navigation">
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
               <ul class="nav navbar-nav  main_nav">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toys <b class="caret"></b></a>
@@ -108,10 +123,12 @@
               </ul>
             </div>
             <!-- /.navbar-collapse -->
-          </nav>
+          </nav> --%>
         </div>
       </div>
     </div>
+    
+
     <!--<div class="row">
        <div class="col-md-3 col-xs-12">
        <div class="bannr_tab">
@@ -169,6 +186,7 @@
 			</nav>
 		</div>
   </nav>
+  
   
   <div class="row margn_bot_15">
     <div class="col-xs-2 col-sm-1 mobile_manu">

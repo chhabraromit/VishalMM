@@ -68,7 +68,7 @@
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.imagegallery.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.langcurrencyselector.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.minicart.js"></script>
-		<script type="text/javascript" src="${commonResourcePath}/js/acc.navigation.js"></script>
+		<%-- <script type="text/javascript" src="${commonResourcePath}/js/acc.navigation.js"></script> --%>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.order.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.paginationsort.js"></script>
 		<script type="text/javascript" src="${commonResourcePath}/js/acc.payment.js"></script>
@@ -114,12 +114,56 @@
 
 
 <cms:previewJS cmsPageRequestContextData="${cmsPageRequestContextData}" />
+<<<<<<< HEAD
 
 
 
 
 
 </script>
+=======
+<<<<<<< Updated upstream
+<script type="text/javascript">
+			$(function() {
+				$('nav#menu').mmenu({
+					extensions	: [ 'effect-slide-menu', 'pageshadow' ],
+					searchfield	: false,
+					counters	: true,
+					navbar 		: {
+						title		: ''
+					},
+					navbars		: [
+						 {
+							position	: 'top',
+							content		: [
+								'prev',
+								'title',
+								'close'
+							]
+						}, 
+					]
+				});
+			});
+		</script>
+		<script>
+
+
+$('.nav#menu').click(function(){
+	alert('gh');
+	$(this).toggleClass('mob-cross');
+	$('.mob-menu').fadeToggle();
+	$('body').toggleClass('sca');
+});
+
+   
+           
+  $(window).resize(function(){
+    
+        $('.mob-menu').hide();
+        $('.mob-toggle').removeClass('mob-cross');
+        $('body').removeClass('sca');
+   });
+>>>>>>> a4ada02c9acccb4bbbd896f45e57b8e66ba5077c
 
 <script>
 $(document).ready(function(){

@@ -1147,7 +1147,7 @@ color: rgb(31, 150, 244);
 .mega-dropdown-menu > li > ul > li {list-style: none;}
 .open{background-color:#transparent;}
 .dropdown-color{background-color:#0066b8 !important; border-color:#0066b8 !important; z-index: 99999 !important;}
-.dropdown-right-mrgn{margin-right:11% !important;} 
+.dropdown-right-mrgn{margin-right:-200px !important;} 
 .disply-li li a img{margin-right:5px ; float:left !important;}
 .disply-li{min-width:100px !important; padding:0px; }
 .disply-li li a{    padding: 10px 0 !important;}

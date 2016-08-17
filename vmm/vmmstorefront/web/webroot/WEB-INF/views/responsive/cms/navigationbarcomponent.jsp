@@ -5,9 +5,10 @@
 
 		<c:set value="${component.styleClass} ${dropDownLayout}" var="bannerClasses"/>
 
-		<li class="${bannerClasses} nav__links--primary <c:if test="${not empty component.navigationNode.children}">nav__links--primary-has__sub js-enquire-has-sub</c:if>">
-
-			<cms:component component="${component.link}" evaluateRestriction="true" element="span" class="nav__link js_nav__link"/>
+		<li class="dropdown">
+			
+			<cms:component component="${component.link}" evaluateRestriction="true"/>
+			
 			<c:if test="${not empty component.navigationNode.children}">
 
 				<c:set var="totalSubNavigationColumns" value="${0}"/>
@@ -61,41 +62,37 @@
 						<c:set value="col-md-2" var="subNavigationItemClass"/>
 					</c:when>
 				</c:choose>
-				<c:if test="${not empty component.navigationNode.children}"><span class="glyphicon  glyphicon-chevron-right hidden-md hidden-lg nav__link--drill__down js_nav__link--drill__down"></span></c:if>
-				<div class="sub__navigation js_sub__navigation ${subNavigationClass}">
-					<a class="sm-back js-enquire-sub-close hidden-md hidden-lg" href="#">Back</a>
-					<div class="row">
+				<%-- <c:if test="${not empty component.navigationNode.children}"><span class="glyphicon  glyphicon-chevron-right hidden-md hidden-lg nav__link--drill__down js_nav__link--drill__down"></span></c:if> --%>
+			
+					
+					
 					<c:forEach items="${component.navigationNode.children}" var="child">
 						<c:if test="${child.visible}">
-							<c:forEach items="${child.links}" step="${component.wrapAfter}" var="childlink" varStatus="i">
+							
 								<%-- for a large amount of links (depending on what wrapAfter is set to) that would exceed 6 columns, insert a clearfix div to have the next row properly aligned --%>
-								<c:if test="${i.index != 0 && i.index % (6*component.wrapAfter) == 0}">
-									<div class="clearfix hidden-sm-down"></div>
-								</c:if>
+								
 
-								<div class="sub-navigation-section ${subNavigationItemClass}">
-									<%--only add title on first loop for each sub-section--%>
-									<c:if test="${i.index == 0 && not empty child.title}">
-										<div class="title">${child.title}</div>
-									</c:if>
+								<!-- in loop
+									only add title on first loop for each sub-section -->
+									
 
-									<ul class="sub-navigation-list ${hasTitleClass}">
+									 <ul class="dropdown-menu drp-dwn-1">
 										<c:forEach items="${child.links}" var="childlink" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
-											<c:if test="${fn:contains(childlink.uid, 'BrowseAll')}">
+											<%-- <c:if test="${fn:contains(childlink.uid, 'BrowseAll')}">
 												<span class="text-uppercase">
-											</c:if>
-											<cms:component component="${childlink}" evaluateRestriction="true" element="li" class="nav__link--secondary" />
+											</c:if> --%>
+											<cms:component component="${childlink}" evaluateRestriction="true" element="li"  />
 											<c:if test="${fn:contains(childlink.uid, 'BrowseAll')}">
 												</span>
 											</c:if>
 										</c:forEach>
-									</ul>
+									</ul> 
 
-								</div>
-							</c:forEach>
+								
+							
 						</c:if>
 					</c:forEach>
-				</div>
-				</div>
+				
+				
 			</c:if>
 		</li>

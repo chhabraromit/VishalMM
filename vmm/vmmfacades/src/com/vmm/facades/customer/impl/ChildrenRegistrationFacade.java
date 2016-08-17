@@ -47,7 +47,7 @@ public class ChildrenRegistrationFacade implements com.vmm.facades.customer.Chil
 
 		newChildRegistration.setDateOfBirth(data.getDateOfBirth());
 
-		newChildRegistration.setDateOfBirth(data.getDateOfBirth());
+		newChildRegistration.setGender(data.getGender());
 		return childrenAccountService.doSaveCustomerRegistration(newChildRegistration);
 	}
 

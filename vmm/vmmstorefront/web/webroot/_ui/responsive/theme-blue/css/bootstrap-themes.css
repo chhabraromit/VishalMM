@@ -501,7 +501,7 @@ a.list-group-item .list-group-item-heading {
 	right: 10px;
 }
 .dropdown-menu > li > a {
-	color: #aaaaaa !important;
+	color: #aaaaaa ;
 	font-weight: 300;
 	margin: 0 5px;
 	-webkit-transition: all 0.25s;
@@ -515,7 +515,7 @@ a.list-group-item .list-group-item-heading {
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 	text-decoration: none;
-	color: #a1a1a1 !important;
+	color: #a1a1a1 ;
 	background-color: #f7f6f1 ;
 }
 .dropdown-menu > .active > a {
