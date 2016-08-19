@@ -7283,7 +7283,9 @@ output {
 .open > .dropdown-menu {
   padding: 15px 0 0 0;
 }
-
+.dropdown-menu li {
+  margin-top: 3px;
+}
 .dropdown-menu li:first-child {
   margin-top: 0px;
 }
@@ -8884,7 +8886,7 @@ ul.nav__links::after {
   background-color: #f2f2f2;
 }
 header {
-  background: #f8f8f8;
+  background: #fff;
   margin-bottom: 20px;
 }
 .page-cartPage header,

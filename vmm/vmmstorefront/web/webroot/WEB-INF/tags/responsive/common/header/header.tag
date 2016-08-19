@@ -64,10 +64,10 @@
 							 </cms:pageSlot>
         </li>
         <sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
-        <li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i> <spring:theme code="header.link.login" /></a></li>
+        <li><a href="<c:url value='/login'/>"><i class="fa fa-sign-in" aria-hidden="true"></i> <spring:theme code="header.link.login" /></a></li>
         </sec:authorize>
         <sec:authorize ifNotGranted="ROLE_ANONYMOUS">
-        <li><a href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> <spring:theme code="header.link.logout" /></a></li>
+        <li><a href="<c:url value='/logout'/>"><i class="fa fa-sign-out" aria-hidden="true"></i> <spring:theme code="header.link.logout" /></a></li>
         </sec:authorize>
         <li><a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <spring:theme code="header.link.basket" /></a></li>
       </ul>
@@ -127,7 +127,7 @@
         </div>
       </div>
     </div>
-    
+ 
 
     <!--<div class="row">
        <div class="col-md-3 col-xs-12">
@@ -140,6 +140,19 @@
     
     
     </div>-->
+  </div>
+</div>
+   <div class="container">
+  <div id="owl-demo" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+    <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 1986px; left: 0px; display: block; transition: all 1000ms ease; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 331px;"><div class="item">
+      <div class="bannr_tab"> <a href="faq">FREE HOME DELIVERY</a> <a href="faq" class="find_more_a">FINDOUT MORE</a> </div>
+    </div></div><div class="owl-item" style="width: 331px;"><div class="item">
+      <div class="bannr_tab"> <a href="faq">Order by 7pm &amp; Get next day delivery</a> <a href="faq" class="find_more_a">FINDOUT MORE</a> </div>
+    </div></div><div class="owl-item" style="width: 331px;"><div class="item bodr_none">
+      <div class="bannr_tab"> <a href="faq">click &amp; collect in store</a> <a href="faq" class="find_more_a">FINDOUT MORE</a> </div>
+    </div></div></div></div>
+    
+    
   </div>
 </div>
 <div class="container-fluid head_bg display_n">

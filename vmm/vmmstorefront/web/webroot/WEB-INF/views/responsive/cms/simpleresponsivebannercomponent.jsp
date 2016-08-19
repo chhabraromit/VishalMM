@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <c:forEach items="${medias}" var="media">
 	<c:choose>
 		<c:when test="${empty imagerData}">
@@ -17,8 +16,10 @@
 
 <c:url value="${urlLink}" var="encodedUrl" />
 <div class="banner banner__component--responsive">
+
 	<c:choose>
 		<c:when test="${empty encodedUrl || encodedUrl eq '#'}">
+		
 				<img class="js-responsive-image"  data-media='{${imagerData}}' alt='${altText}' title='${altText}' style="">
 		</c:when>
 		<c:otherwise>
@@ -27,4 +28,5 @@
 				</a>
 		</c:otherwise>
 	</c:choose>
-</div>
+	
+	</div>

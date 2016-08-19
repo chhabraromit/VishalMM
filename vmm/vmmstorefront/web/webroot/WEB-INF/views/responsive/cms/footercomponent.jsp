@@ -4,7 +4,7 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="footer" tagdir="/WEB-INF/tags/responsive/common/footer"  %>
 
-<div class="container-fluid">
+<div class="container">
     <div class="footer__top">
         <div class="row">
             <div class="footer__left col-xs-12 col-sm-12 col-md-9">

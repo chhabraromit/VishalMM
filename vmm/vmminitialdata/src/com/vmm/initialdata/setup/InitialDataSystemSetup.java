@@ -1,14 +1,3 @@
-/*
- * [y] hybris Platform
- *
- * Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of SAP
- * ("Confidential Information"). You shall not disclose such Confidential
- * Information and shall use it only in accordance with the terms of the
- * license agreement you entered into with SAP.
- */
 package com.vmm.initialdata.setup;
 
 import de.hybris.platform.commerceservices.dataimport.impl.CoreDataImportService;
@@ -45,9 +34,9 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 	private CoreDataImportService coreDataImportService;
 	private SampleDataImportService sampleDataImportService;
-	
-	
-	/vmminitialdata/resources/vmminitialdata	
+
+
+
 	@Override
 	@SystemSetupParameterMethod
 	public List<SystemSetupParameter> getInitializationOptions()
@@ -90,10 +79,17 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 		getSampleDataImportService().execute(this, context, importData);
 		getEventService().publishEvent(new SampleDataImportedEvent(context, importData));
-		
-		getSetupImpexService().importImpexFile(String.format("/%s//import/coredata/contentCatalogs/vmmDelhiContentCatalog/catalog-content-orderhistorydetails.impex", VmmInitialDataConstants.EXTENSIONNAME),true);
-		getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-orderhistorydetailspage.impex", VmmInitialDataConstants.EXTENSIONNAME),true);
-		getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-logo.impex", VmmInitialDataConstants.EXTENSIONNAME),true);
+
+		getSetupImpexService().importImpexFile(
+				String.format("/%s//import/coredata/contentCatalogs/vmmDelhiContentCatalog/catalog-content-orderhistorydetails.impex",
+						VmmInitialDataConstants.EXTENSIONNAME),
+				true);
+		getSetupImpexService().importImpexFile(String.format(
+				"/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-orderhistorydetailspage.impex",
+				VmmInitialDataConstants.EXTENSIONNAME), true);
+		getSetupImpexService()
+				.importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-logo.impex",
+						VmmInitialDataConstants.EXTENSIONNAME), true);
 
 	}
 

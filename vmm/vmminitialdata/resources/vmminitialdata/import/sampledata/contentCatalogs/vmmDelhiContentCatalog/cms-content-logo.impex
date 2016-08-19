@@ -5,7 +5,7 @@ $siteResource=jar:com.vmm.initialdata.constants.VmmInitialDataConstants&/vmminit
 
 
 INSERT_UPDATE Media	;$contentCV[unique=true];code[unique=true]				;realfilename			;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]	;mime[default='image/jpg']	;description	;altText;mediaFormat(qualifier)	
-			;			;/images/theme/logo_hybris_responsive.svg	;logo_hybris_responsive.svg	;$siteResource/images/landing_pages/v_mart_logo.png						;				;		;	;desktop		
+			;			;/images/theme/logo_hybris_responsive.svg	;v_mart_logo.png	;$siteResource/images/landing_pages/v_mart_logo.png						;				;		;	;desktop		
 
 			
 

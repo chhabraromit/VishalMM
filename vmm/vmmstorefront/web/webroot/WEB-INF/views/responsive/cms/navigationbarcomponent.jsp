@@ -77,14 +77,14 @@
 									
 
 									 <ul class="dropdown-menu drp-dwn-1">
-										<c:forEach items="${child.links}" var="childlink" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
+										<c:forEach items="${child.links}" var="childlink">
 											<%-- <c:if test="${fn:contains(childlink.uid, 'BrowseAll')}">
 												<span class="text-uppercase">
 											</c:if> --%>
 											<cms:component component="${childlink}" evaluateRestriction="true" element="li"  />
-											<c:if test="${fn:contains(childlink.uid, 'BrowseAll')}">
+											<%-- <c:if test="${fn:contains(childlink.uid, 'BrowseAll')}">
 												</span>
-											</c:if>
+											</c:if> --%>
 										</c:forEach>
 									</ul> 
 

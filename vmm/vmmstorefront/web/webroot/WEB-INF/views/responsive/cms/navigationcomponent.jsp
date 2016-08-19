@@ -6,16 +6,16 @@
  <c:set value="${component.styleClass}" var="navigationClass" />
 
 <c:if test="${component.visible}">
-    <div class="${navigationClass} romit js-${navigationClass} display-none NAVcompONENT" data-title="${component.navigationNode.title}">
+    <div class="${navigationClass} js-${navigationClass} display-none NAVcompONENT" data-title="${component.navigationNode.title}">
         <nav class="${navigationClass}__child-wrap display-none">
             <c:if test="${not empty component.navigationNode.title }">
-            not empty
+           
                 <div>
                     <c:out value="${component.navigationNode.title}"/>
                 </div>
             </c:if>
             <c:forEach items="${component.navigationNode.children}" var="topLevelChild">
-            loop
+            
                 <c:forEach items="${topLevelChild.entries}" var="entry">
                     <div>
                         <cms:component component="${entry.item}" evaluateRestriction="true" />
@@ -36,7 +36,7 @@
            	
             <li class="col-sm-3">
               <ul class="drp-dwn-ul">
-                 <li><a href="${entry.item.url}"><i class="fa fa-user" aria-hidden="true"></i> ${entry.item.linkName}</a></li>
+                 <li><a href="<c:url value='${entry.item.url}'/>"><i class="fa fa-user" aria-hidden="true"></i> ${entry.item.linkName}</a></li>
                 <!-- <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email Address</a></li> -->
                <!--  <li><a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Password</a></li> -->
               </ul>

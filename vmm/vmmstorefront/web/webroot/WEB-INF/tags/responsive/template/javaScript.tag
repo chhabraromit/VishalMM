@@ -18,6 +18,7 @@
 	<c:otherwise>
 		<%-- jquery --%>
 		<script type="text/javascript" src="${commonResourcePath}/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="${commonResourcePath}/js/owl.carousel.min.js"></script>
 		
 		<%-- bootstrap --%>
 		<script type="text/javascript" src="${commonResourcePath}/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -94,8 +95,8 @@
 
 		<script type="text/javascript" src="${commonResourcePath}/js/_autoload.js"></script>
 		
-		<script type="text/javascript" src="${commonResourcePath}/js/owl.carousel.js"></script>
-		<script type="text/javascript" src="${commonResourcePath}/js/owl.carousel.min.js"></script>
+		
+		
 		
 		
 		
@@ -121,13 +122,12 @@
 
 
 </script>
-=======
-<<<<<<< Updated upstream
 <script type="text/javascript">
 			$(function() {
 				$('nav#menu').mmenu({
 					extensions	: [ 'effect-slide-menu', 'pageshadow' ],
 					searchfield	: false,
+					slidingSubmenus: false,
 					counters	: true,
 					navbar 		: {
 						title		: ''
@@ -145,6 +145,37 @@
 				});
 			});
 		</script>
+		<script>
+    $(document).ready(function() {
+		
+		
+ 
+  //Sort random function
+  function random(owlSelector){
+    owlSelector.children().sort(function(){
+        return Math.round(Math.random()) - 0.5;
+    }).each(function(){
+      $(this).appendTo(owlSelector);
+    });
+  }
+ 
+  $("#owl-demo2, #owl-demo3").owlCarousel({
+    navigation: true,
+    navigationText: [
+      "<i class='fa fa-chevron-left'></i>",
+      "<i class='fa fa-chevron-right'></i>"
+      ],
+    beforeInit : function(elem){
+      //Parameter elem pointing to $("#owl-demo")
+      random(elem);
+    }
+ 
+  });
+ 
+});
+    
+    </script> 
+		
 		<script>
 
 
