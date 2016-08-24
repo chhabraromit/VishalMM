@@ -21,3 +21,6 @@ vmm/vmmtest/gensrc/
 
 #.gitignore files
 .gitignore~
+
+#properties file created during build
+**/platformhome.properties
