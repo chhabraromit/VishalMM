@@ -87,6 +87,13 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		getSetupImpexService().importImpexFile(String.format(
 				"/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-orderhistorydetailspage.impex",
 				VmmInitialDataConstants.EXTENSIONNAME), true);
+		getSetupImpexService().importImpexFile(
+				String.format("/%s//import/coredata/contentCatalogs/vmmDelhiContentCatalog/cms-content-accountAddChildrenPage.impex",
+						VmmInitialDataConstants.EXTENSIONNAME),
+				true);
+		getSetupImpexService().importImpexFile(String.format(
+				"/%s//import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-accountAddChildrenPage.impex",
+				VmmInitialDataConstants.EXTENSIONNAME), true);
 		getSetupImpexService()
 				.importImpexFile(String.format("/%s/import/sampledata/contentCatalogs/vmmDelhiContentCatalog/cms-content-logo.impex",
 						VmmInitialDataConstants.EXTENSIONNAME), true);
