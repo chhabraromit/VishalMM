@@ -32,6 +32,7 @@ public class ChildrenRegistrationFacade implements com.vmm.facades.customer.Chil
 	@Autowired
 	private ChildrenRegistrationService childrenAccountService;
 
+
 	@Override
 	public boolean saveRegistration(final ChildrenData data) throws DuplicateUidException
 	{
@@ -48,6 +49,7 @@ public class ChildrenRegistrationFacade implements com.vmm.facades.customer.Chil
 		newChildRegistration.setDateOfBirth(data.getDateOfBirth());
 
 		newChildRegistration.setGender(data.getGender());
+
 		return childrenAccountService.doSaveCustomerRegistration(newChildRegistration);
 	}
 
